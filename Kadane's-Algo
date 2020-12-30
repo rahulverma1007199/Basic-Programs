@@ -1,0 +1,19 @@
+package codeSolve;
+class Code{
+	void kadaneAlgo(int arr[]) {
+		int max_global = arr[0];
+		int max_variable = arr[0];
+		for(int i=1;i<arr.length-1;i++) {
+			max_variable = Math.max(arr[i], arr[i]+ max_variable);
+			if(max_variable > max_global) {
+				max_global = max_variable;
+			}
+		}
+		System.out.println(max_global);
+	}
+	public static void main(String[] args) {
+		int arr[] = {-2,-3,4,-1,-2,1,5,-3};
+		Code obj = new Code();
+		obj.kadaneAlgo(arr);
+	}
+}// kadane's algorithm
